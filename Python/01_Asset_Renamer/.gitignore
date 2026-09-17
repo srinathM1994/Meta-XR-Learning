@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+
+01_Asset_Renamer_backup/
+build/
+dist/
+*.spec
+
+.venv/
+venv/
+.env
+
+report.csv
+
+.DS_Store
+Thumbs.db

@@ -1,0 +1,17 @@
+from pathlib import Path
+import csv
+script_dir = Path(__file__).parent
+report_file = script_dir / "report.csv"
+def read_artist_decisions(report_file):
+    decisions = {}
+    with open(report_file, newline="") as file:
+        next(file)  # Skip instruction row
+        next(file)  # Skip blank row
+        reader = csv.DictReader(file)
+        for row in reader:
+            original = row["Original"]
+            status = row["Status"]
+            decisions[original] = status
+    return decisions
+decisions = read_artist_decisions(report_file)
+print(decisions)
